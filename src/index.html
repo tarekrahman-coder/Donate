@@ -8,8 +8,8 @@
 </head>
 <body >
        <!-- header start -->
-        <header class="">
-            <nav class=" bg-orange-50">
+        <header id="header" class="sticky top-0 z-50 w-full shadow-sm transition-all duration-300 ease-in-out pb-3 ">
+            <nav id="nav" class=" bg-slate-50">
                 <div class="w-4/5 mx-auto flex justify-between pt-5 pb-10">
                 <div class=""><a class="btn-custom" href="./blog.html">Blog</a></div>
 
@@ -20,19 +20,19 @@
 
                 <div class="flex gap-2">
                     <img class="w-6 h-6" src="../assets/coin.png" alt="coin">
-                    <p class="font-bold text-gray-600"><span>5500</span> BDT</p>
+                    <p class="font-bold text-gray-600"><span id="total">5500</span> BDT</p>
                 </div>
             </div>
             </nav>
 
             <!-- hero section -->
              <div class="flex flex-row justify-center gap-5 items-end mt-20">
-                <a class="btn-custom" href="#">Donation</a>
-                <a class="btn-custom-2" href="#">History</a>
+                <button id="donate" class="btn-custom" >Donation</button>
+                <button id="history" class="btn-custom-2" >History</button>
              </div>
         </header>
        <!-- header end -->  
-        <main class="mt-8 w-4/5 mx-auto">
+        <main class="mt-6 w-4/5 mx-auto">
             <!-- section donate one-->
             <section class="grid md:grid-cols-2 gap-5 border p-5 rounded-md items-center mb-5">
                 <div>
@@ -43,7 +43,7 @@
                       <!-- donate amount -->
                        <div class="flex gap-2 items-center justify-around bg-neutral-200 rounded-md w-28 p-1">
                         <img class="w-5 h-5" src="../assets/coin.png" alt="coin">
-                        <p class="text-sm font-bold"><span>0</span> BDT</p>
+                        <p class="text-sm font-bold"><span id="donate_noakhali">0</span> BDT</p>
                        </div>
 
                        <!-- donate title -->
@@ -56,14 +56,17 @@
 
                          <!-- donate box -->
                           <div class="mb-6">
-                              <input type="text" name="donate" id="donate" class="input" placeholder="Write Donation Amount">
+                              <input type="text" name="donate" id="donate_noakhali_input" class="input" placeholder="Write Donation Amount">
                               
                             </div>
                               <!-- donate button -->
-                              <a class="btn-custom block" href="#">Donate Now</a>
+                              <button id="donate_noakhali_btn" class="btn-custom min-w-full">Donate Now</button>
                 </div>
             </section>
             
+
+
+
                <!-- section donate two-->
                <section class="grid md:grid-cols-2 gap-5 border p-5 rounded-md items-center mb-5">
                 <div>
@@ -74,11 +77,11 @@
                       <!-- donate amount -->
                        <div class="flex gap-2 items-center justify-around bg-neutral-200 rounded-md w-28 p-1">
                         <img class="w-5 h-5" src="../assets/coin.png" alt="coin">
-                        <p class="text-sm font-bold"><span>0</span> BDT</p>
+                        <p class="text-sm font-bold"><span id="donate_feni">0</span> BDT</p>
                        </div>
 
                        <!-- donate title -->
-                        <h2 class="font-bold mt-3 mb-4">Donate for Flood at Noakhali, Bangldesh</h2>
+                        <h2 class="font-bold mt-3 mb-4">Donate for Flood Felief in Feni, Bangldesh</h2>
 
                         <!-- donate description -->
                          <p class="mb-4 text-gray-500 text-sm text-justify">
@@ -87,11 +90,11 @@
 
                          <!-- donate box -->
                           <div class="mb-6">
-                              <input type="text" name="donate" id="donate" class="input" placeholder="Write Donation Amount">
+                              <input type="text" name="donate" id="donate_feni_input" class="input" placeholder="Write Donation Amount">
                               
                             </div>
                               <!-- donate button -->
-                              <a class="btn-custom block" href="#">Donate Now</a>
+                              <button id="donate_feni_btn" class="btn-custom min-w-full">Donate Now</button>
                 </div>
             </section>
 
@@ -105,11 +108,11 @@
                       <!-- donate amount -->
                        <div class="flex gap-2 items-center justify-around bg-neutral-200 rounded-md w-28 p-1">
                         <img class="w-5 h-5" src="../assets/coin.png" alt="coin">
-                        <p class="text-sm font-bold"><span>0</span> BDT</p>
+                        <p class="text-sm font-bold"><span id="aid_quota">0</span> BDT</p>
                        </div>
 
                        <!-- donate title -->
-                        <h2 class="font-bold mt-3 mb-4">Donate for Flood at Noakhali, Bangldesh</h2>
+                        <h2 class="font-bold mt-3 mb-4">Aid for injured in the Quota Movement</h2>
 
                         <!-- donate description -->
                          <p class="mb-4 text-gray-500 text-sm text-justify">
@@ -118,17 +121,44 @@
 
                          <!-- donate box -->
                           <div class="mb-6">
-                              <input type="text" name="donate" id="donate" class="input" placeholder="Write Donation Amount">
+                              <input type="text" name="donate" id="aid_quota_input"
+                              class="input" placeholder="Write Donation Amount">
                               
                             </div>
                               <!-- donate button -->
-                              <a class="btn-custom block" href="#">Donate Now</a>
+                              <button id="aid_quota_btn" class="btn-custom min-w-full">Donate Now</button>
                 </div>
             </section>
-
         </main>
+
+     
+
+
         <footer class="bg-orange-50 h-24 mt-16">
 
-        </footer>                  
+        </footer>    
+        <!-- modal start -->
+     <dialog id="my_modal" class="modal">
+    
+      <div class="modal-box flex flex-col justify-center items-center">
+  
+          <h3 class="font-bold text-3xl">Congrates!</h3>
+          <img class="h-8 w-8 my-3" src="../assets/coin.png" alt="">
+          <p class="mt-5 mb-3">You Have Donated for Humankind</p>
+          <h4 class="font-bold">Successfully</h4>
+          
+          <div class="modal-action">
+            <form method="dialog">
+              
+              <button id="modal_close_btn" class="btn" >close confirmation</button>
+            </form>
+          </div>
+      </div>
+
+    </dialog>
+  
+ 
+     <!-- modal end  -->
+        <script src="./main.js"></script>
 </body>
 </html>
