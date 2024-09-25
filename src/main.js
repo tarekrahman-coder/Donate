@@ -112,6 +112,12 @@ historyBtn.addEventListener('click', (e)=>{
 
     donationSection.classList.add('hidden');
     historySection.classList.remove('hidden')
+    
+    donateBtn.classList.remove('btn-custom');
+    donateBtn.classList.add('btn-custom-2');
+
+    historyBtn.classList.add('btn-custom')
+    historyBtn.classList.remove('btn-custom-2')
 
 })
 
@@ -121,5 +127,11 @@ donateBtn.addEventListener('click', (e)=>{
 
     historySection.classList.add('hidden')
     donationSection.classList.remove('hidden');
+
+    historyBtn.classList.remove('btn-custom')
+    historyBtn.classList.add('btn-custom-2')
+
+    donateBtn.classList.remove('btn-custom-2');
+    donateBtn.classList.add('btn-custom');
 
 })
