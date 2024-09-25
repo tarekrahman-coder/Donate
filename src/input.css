@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.blur-effect {
+    backdrop-filter: blur(10px);
+    transition: backdrop-filter 0.3s ease; 
+}
+
 .btn-custom{
     @apply font-bold bg-lime-400 py-[10px] px-6 rounded-md text-center
 }

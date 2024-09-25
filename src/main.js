@@ -1,7 +1,4 @@
 // selecting elements
-const header = document.getElementById('header');
-const nav = document.getElementById('nav');
-
 const totalAmount = document.getElementById('total');
 
 const donateBtn = document.getElementById('donate');
@@ -23,16 +20,6 @@ const aidQuotaBtn = document.getElementById('aid_quota_btn')
 
 const modal = document.getElementById('my_modal')
 const closeModalBtn = document.getElementById('modal_close_btn')
-
-
-
-// add blur for sticky 
-if (window.scrollY > 100) {
-        header.classList.add('backdrop-blur-md', 'bg-opacity-50'); 
-       
-    } else {
-        header.classList.remove('backdrop-blur-md', 'bg-opacity-50');
-}
 
 
 // setting initial values
@@ -69,7 +56,6 @@ function updateValues(amount, area){
 
 
 // update history
-
 function updateHistory(amount, area){
     const date = new Date();
     const div = document.createElement('div');
@@ -90,7 +76,6 @@ donateNoakhaliBtn.addEventListener('click', (e) => {
     e.preventDefault()
 
     let amount = donateNoakhaliInput.value;
-
     if(amount <= 0 || isNaN(amount) === true) {
         alert("Please enter a valid donation amount")
     }else{
