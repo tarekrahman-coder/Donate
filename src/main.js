@@ -56,76 +56,54 @@ function updateValues(amount, area){
 
 
 // update history
-function updateHistory(amount, area){
+function updateHistory(amount, title){
     const date = new Date();
     const div = document.createElement('div');
     div.setAttribute('class', 'history-item')
     div.innerHTML = `
-        <h2>${amount} Take is ${area}</h2>
+        <h2>${amount} Take is ${title}</h2>
         <p>${date}</p>
     `
     historySection.appendChild(div);
 }
 
-// handling modals
-const handleModals = () => modal.showModal()
+// handling donation
+function handleDonation(inputElement, area, description){
+    const amount = inputElement.value;
 
+    if(amount <= 0 || isNaN(amount) === true){
+        alert('Please enter a valid donation amount');
+        return ;
+    }
+    const donationAmount = parseInt(amount)
+    updateValues(donationAmount, area)
+    handleModals();
+    updateHistory(donationAmount, description)
+    inputElement.value = ''
+}
 
 // add even listener for noakhali
 donateNoakhaliBtn.addEventListener('click', (e) => {
     e.preventDefault()
-
-    let amount = donateNoakhaliInput.value;
-    if(amount <= 0 || isNaN(amount) === true) {
-        alert("Please enter a valid donation amount")
-    }else{
-        const donationAmount = parseInt(amount);
-        updateValues(donationAmount, 'noakhali')
-        handleModals()
-        updateHistory(amount, 'Donated for flood relief in Noakhali, Bangladesh')
-       
-    }
-    donateNoakhaliInput.value = '';
-        
-    
+    handleDonation(donateNoakhaliInput, 'noakhali', 'Donated for flood relief in Noakhali, Bangladesh')        
 })
 
 // add even listener for feni
 donateFeniBtn.addEventListener('click', (e)=>{
     
     e.preventDefault()
-    const amount = donateFeniInput.value;
-    
-    if(amount <= 0 || isNaN(amount) === true){
-        alert('Plese enter a valid donation amount')
-    }else{
-        const donationAmount = parseInt(amount);
-        updateValues(donationAmount, 'feni');
-        handleModals()
-        updateHistory(amount, 'Donated for flood relief in Feni, Bangladesh')
-    }
-    donateFeniInput.value = '';
-
+    handleDonation(donateFeniInput, 'feni', 'Donated for flood relief in Feni, Bangladesh') 
 })
 
 // add even listener for aid quota
 aidQuotaBtn.addEventListener('click', (e)=> {
     
     e.preventDefault();
-    const amount = aidQuotaInput.value;
-    
-    if(amount <= 0 || isNaN(amount) === true){
-        alert("Please enter a valid aid amount")
-    }else{
-        const aidAmount = parseInt(amount);
-        updateValues(aidAmount, 'protest');
-        handleModals()
-        updateHistory(amount, 'Aid for injured in the Quota Movement')
-
-    }
-    aidQuotaInput.value = '';
+    handleDonation(aidQuotaInput, 'protest', 'Aid for injured in the Quota Movement') 
 })
 
+// handling modals
+const handleModals = () => modal.showModal()
 
 // toggling donate and history button
 
