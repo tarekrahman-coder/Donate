@@ -10,7 +10,7 @@
            <!-- header start -->
            <header class="">
             <nav class=" bg-orange-50">
-                <div class="w-4/5 mx-auto flex justify-between pt-5 pb-10">
+                <div class="sm:w-4/5 mx-auto flex justify-between pt-5 pb-10">
                 <div class=""><a class="btn-custom" href="./index.html">Home</a></div>
 
                 <div class="flex gap-3">
@@ -20,10 +20,67 @@
 
                 <div class="flex gap-2">
                     <img class="w-6 h-6" src="../assets/coin.png" alt="coin">
-                    <p class="font-bold text-gray-600"><span>5500</span> BDT</p>
+                    <p class="font-bold text-gray-600"><span id="total">970000</span> BDT</p>
                 </div>
             </div>
             </nav>
         </header>
+
+        <main class="w-4/5 mx-auto mt-5">
+            <section>
+                <div class="collapse collapse-plus bg-base-200 mt-3">
+                    <input type="radio" name="my-accordion-3" checked="checked" />
+                    <div class="collapse-title text-xl font-medium">What is the DOM used for?</div>
+                    <div class="collapse-content">
+                      <p>The DOM allows JavaScript to interact with and manipulate web page content. It lets developers dynamically update text, images, and other elements, and respond to user interactions like clicks and form inputs.</p>
+                    </div>
+                  </div>
+                  <div class="collapse collapse-plus bg-base-200 mt-3">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title text-xl font-medium">How can I select elements in the DOM?</div>
+                    <div class="collapse-content">
+                      <p>You can use methods like document.getElementById(), document.querySelector(), or document.getElementsByClassName() to select elements in the DOM and modify them.</p>
+                    </div>
+                  </div>
+                  <div class="collapse collapse-plus bg-base-200 mt-3">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title text-xl font-medium">What is an event listener in the DOM?</div>
+                    <div class="collapse-content">
+                      <p>An event listener is a JavaScript function that runs when a specific event occurs on an element, like a click or keypress. You can add it using element.addEventListener('event', function).</p>
+                    </div>
+                  </div>
+
+                  <div class="collapse collapse-plus bg-base-200 mt-3">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title text-xl font-medium">How does JavaScript manipulate the DOM?</div>
+                    <div class="collapse-content">
+                      <p>JavaScript can change the DOM by modifying element attributes, inner content, styles, or adding/removing elements using methods like innerHTML, setAttribute(), or appendChild().</p>
+                    </div>
+                  </div>
+
+                  <div class="collapse collapse-plus bg-base-200 mt-3">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title text-xl font-medium">What is the difference between innerHTML and textContent?</div>
+                    <div class="collapse-content">
+                      <p>innerHTML sets or gets the HTML content of an element, including HTML tags. textContent only sets or gets the plain text, without any HTML formatting.</p>
+                    </div>
+                  </div>
+
+                  <div class="collapse collapse-plus bg-base-200 mt-3">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title text-xl font-medium">What is DOM traversal?</div>
+                    <div class="collapse-content">
+                      <p>DOM traversal refers to navigating through the DOM tree, moving between parent, child, sibling, or other related nodes using properties like parentNode, childNodes, or nextSibling.</p>
+                    </div>
+                  </div>
+            </section>
+        </main>
+        <footer class="bg-orange-50 h-24 mt-16">
+
+        </footer>   
+        <script>
+  
+        </script>
+        
 </body>
 </html>
